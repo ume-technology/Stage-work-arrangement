@@ -19,7 +19,7 @@ from tqdm import tqdm
 logging.basicConfig(filename='wrong_label_product.log', level=logging.INFO)
 
 # todo - important Standard：     giikin data standard properties
-with open('./nowstandardtags/giikin_prtswithstandards_tags.pick', 'rb') as f:
+with open('../bigfiles/giikin_prtswithstandards_tags.pick', 'rb') as f:
     goodstags = pickle.load(f)
     # todo 融合所有的product的tags信息到goods中；fixme 这里需要明确的是一个产品被投放成了哪些个商品，分别都在哪些线路上；
     allproductlist = []
@@ -32,12 +32,12 @@ with open('./nowstandardtags/giikin_prtswithstandards_tags.pick', 'rb') as f:
         allproductlist.append(each_goodsalltags)
 
 # todo 读取产品信息维表
-with open('./nowstandardtags/read_and_prepare_basetagsdata/tb_dim_pro_gk_product_df.pick', 'rb') as f:
+with open('../bigfiles/tb_dim_pro_gk_product_df.pick', 'rb') as f:
     prtclsinfo = pickle.load(f)
 
 # todo 读取商品标签数据
-# with open( './nownerdata/data') as f:
-basepath = './nownerdata/data'  # part of nertags data demo  save to ./data-
+# with open( '../bigfiles/savenerdata/nermodelresultdata') as f:
+basepath = '../bigfiles/savenerdata/nermodelresultdata'  # part of nertags data demo  save to ./data-
 filename = os.listdir(basepath)
 allgoodsdatadf = ''
 for idx, i in enumerate(filename):

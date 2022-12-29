@@ -1,18 +1,18 @@
 """
-抽取商品标签
+todo 融合多种giikin商品数据表；得到giikin standard 商品标签信息
 """
 import re
 import json
 import pickle
 import numpy as np
 
-with open('./read_and_prepare_basetagsdata/tb_dim_pro_gk_ali_tags_df-1688产品属性表', 'rb') as f:  # used
-    tags2goodsfrom1688_df = pickle.load(f)
-with open('./read_and_prepare_basetagsdata/tb_dim_pro_gk_product_df.pick', 'rb') as f:  # used
+with open('../../bigfiles/tb_dim_pro_gk_product_df.pick', 'rb') as f:
     fromselector2product_df = pickle.load(f)
-with open('./read_and_prepare_basetagsdata/tb_dim_pro_gk_product_tag_df-产品标签属性表', 'rb') as f:  # used
+with open('../../bigfiles/tb_dim_pro_gk_ali_tags_df-1688产品属性表', 'rb') as f:
+    tags2goodsfrom1688_df = pickle.load(f)
+with open('../../bigfiles/tb_dim_pro_gk_product_tag_df-产品标签属性表', 'rb') as f:
     res = pickle.load(f)
-with open('./read_and_prepare_basetagsdata/tb_dwd_pro_product_sale_df-产品商品信息表', 'rb') as f:  # user
+with open('../../bigfiles/tb_dwd_pro_product_sale_df-产品商品信息表', 'rb') as f:
     res_ = pickle.load(f)
 
 # todo 存储商品属性信息
@@ -303,4 +303,4 @@ for row in res_.itertuples():
     if product_price:
         tags_giikin['产品售价'] = product_price
 
-# important  最后存储的tags文件在这里：./giikin_prtswithstandards_tags.pick
+# important  最后存储的tags文件在这里：../../bigfiles/giikin_prtswithstandards_tags.pick

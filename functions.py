@@ -9,8 +9,8 @@
 from odps import ODPS
 from odps import options
 
-ACCESS_ID = 'aaaaaf8v5iivK9FoBk'
-ACCESS_KEY = 'aaaaaJB3xvULi85h0TJxYzo'
+ACCESS_ID = 'aaaaaa8v5iivK9FoBk'
+ACCESS_KEY = 'aaaaaDSpJB3xvULi85h0TJxYzo'
 DEFAULT_PROJECT = 'cda'
 END_POINT = 'http://service.cn-shenzhen.maxcompute.aliyun.com/api'
 
@@ -25,6 +25,7 @@ options.tunnel.limit_instance_tunnel = False  # 关闭limit限制，读取全部
 # todo 链接数据库的两种方式
 import pymysql
 import pandas as pd
+
 host = 'ro.hwaurora.rdsdb.com'
 port = 3306
 db = 'gdsc'
